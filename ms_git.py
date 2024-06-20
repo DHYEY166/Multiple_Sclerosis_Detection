@@ -3,9 +3,9 @@ import numpy as np
 import tensorflow as tf
 from PIL import Image
 from tensorflow.keras.models import Model
-from tensorflow.keras.layers import GlobalAveragePooling2D, Dense
+from tensorflow.keras.layers import GlobalAveragePooling2D, Dense, Flatten, BatchNormalization, Dropout
 from tensorflow.keras.applications import vgg16
-from tensorflow.keras.optimizers import Adam, SGD
+from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.preprocessing.image import img_to_array
 
 # Load the pre-trained VGG16 model and modify it for our classification task
@@ -13,15 +13,15 @@ def load_model():
     vgg16_model = vgg16.VGG16(weights='imagenet', include_top=False, input_shape=(224, 224, 3))
     for layer in vgg16_model.layers:
         layer.trainable = False
-    x = keras.layers.Flatten()(vgg16_model.output)
-    x = keras.layers.BatchNormalization()(x)
-    x = keras.layers.Dense(128, activation='relu')(x)
-    x = keras.layers.Dropout(.2)(x)
-    x = keras.layers.Dense(64, activation='relu')(x)
-    x = keras.layers.Dropout(.2)(x)
-    x = keras.layers.Dense(132, activation='relu')(x)
-    predictions = keras.layers.Dense(4, activation='softmax')(x)
-    model = keras.models.Model(inputs=vgg16_model.input, outputs=predictions)
+    x = Flatten()(vgg16_model.output)
+    x = BatchNormalization()(x)
+    x = Dense(128, activation='relu')(x)
+    x = Dropout(0.2)(x)
+    x = Dense(64, activation='relu')(x)
+    x = Dropout(0.2)(x)
+    x = Dense(132, activation='relu')(x)
+    predictions = Dense(4, activation='softmax')(x)
+    model = Model(inputs=vgg16_model.input, outputs=predictions)
     model.compile(loss='categorical_crossentropy', optimizer=Adam(learning_rate=0.001), metrics=['accuracy'])
     return model
 
