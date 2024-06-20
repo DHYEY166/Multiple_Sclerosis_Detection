@@ -2,7 +2,6 @@ import streamlit as st
 import numpy as np
 import tensorflow as tf
 from PIL import Image
-import matplotlib.pyplot as plt
 from tensorflow.keras.models import Model
 from tensorflow.keras.layers import GlobalAveragePooling2D, Dense
 from tensorflow.keras.applications import vgg16
@@ -65,27 +64,3 @@ if uploaded_file is not None:
     st.write("Prediction probabilities:")
     for i, class_name in enumerate(classes):
         st.write(f"{class_name}: {prediction[0][i]*100:.2f}%")
-
-# Display the accuracy and loss graphs (assuming you have the history object from the model training)
-if 'history_16' in locals():
-    history = history_16.history
-    if 'accuracy' in history:
-        plt.figure(figsize=(10, 4))
-        plt.subplot(1, 2, 1)
-        plt.plot(history['accuracy'], label='Training Accuracy')
-        plt.plot(history['val_accuracy'], label='Validation Accuracy')
-        plt.xlabel('Epoch')
-        plt.ylabel('Accuracy')
-        plt.legend()
-        plt.title('Model Accuracy')
-    
-    if 'loss' in history:
-        plt.subplot(1, 2, 2)
-        plt.plot(history['loss'], label='Training Loss')
-        plt.plot(history['val_loss'], label='Validation Loss')
-        plt.xlabel('Epoch')
-        plt.ylabel('Loss')
-        plt.legend()
-        plt.title('Model Loss')
-    
-    st.pyplot(plt)
