@@ -83,9 +83,9 @@ This project is licensed under the MIT License. See the [LICENSE](https://github
 
 ## Contact
 
-**Author**: Dhyey Desai
-**Email**: dhyeydes@usc.edu
-**GitHub**: https://github.com/DHYEY166
-**LinkedIn**: https://www.linkedin.com/in/dhyey-desai-80659a216 
+- **Author**: Dhyey Desai
+- **Email**: dhyeydes@usc.edu
+- **GitHub**: https://github.com/DHYEY166
+- **LinkedIn**: https://www.linkedin.com/in/dhyey-desai-80659a216 
 
 Feel free to reach out if you have any questions or suggestions.
