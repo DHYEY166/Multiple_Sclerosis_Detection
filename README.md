@@ -79,7 +79,7 @@ Contributions are welcome! Please open an issue or submit a pull request for any
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](https://github.com/DHYEY166/BREAST_CANCER_SEMANTIC_SEGMENTATION/blob/main/LICENSE) file for more details.
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/DHYEY166/Multiple_Sclerosis_Detection/blob/main/LICENSE) file for more details.
 
 ## Contact
 
