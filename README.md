@@ -42,7 +42,7 @@ This project involves classifying MRI images into categories related to Multiple
 
   4. Run the Streamlit application:
 
-   streamlit run app.py
+   streamlit run ms_git.py
 
 ## Usage
 
