@@ -1,4 +1,4 @@
-##Breast Cancer Semantic Segmentation
+**Breast Cancer Semantic Segmentation**
 
 Welcome to my Data Science Project! This project focuses on performing breast cancer semantic segmentation using a deep learning model. The application is built with Streamlit, allowing users to upload images and receive segmented outputs indicating different classes related to breast cancer tissues.
 
